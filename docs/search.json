@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "guyaclim",
+    "section": "",
+    "text": "Introduction\nThe general idea is to test the development of a clean and automated database of consolidated raw microclimate data from microsensors (TOMOST, HOBO, …) in French Guiana."
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "guyaclim",
+    "section": "Usage",
+    "text": "Usage\nguyaclim analyses rely on the quarto documents index.qmd that can be run with R and associated environment defined with renv."
+  },
+  {
+    "objectID": "index.html#project",
+    "href": "index.html#project",
+    "title": "guyaclim",
+    "section": "Project",
+    "text": "Project\nguyaclim includes:\n\nAnalyse of the data with associated documentation and figures:\n\nReproductive analyses in index``.qmd\nResulting page in index.html\n\nAll raw data from the database in data/\nR environment definition with renv in renv/ and renv/lock\nR files (.Rbuildignore , .Rdata , .Rprofile , .Rhistory)\nGit and GitHub files (.gitignore)\nProject documentation (README.qmd , README.md , NEWS.md , LICENSE)"
+  },
+  {
+    "objectID": "index.html#poeple",
+    "href": "index.html#poeple",
+    "title": "guyaclim",
+    "section": "Poeple",
+    "text": "Poeple\n\nSylvain Schmitt CIRAD\nLéa Françoise CNRS"
+  },
+  {
+    "objectID": "index.html#database",
+    "href": "index.html#database",
+    "title": "guyaclim",
+    "section": "Database",
+    "text": "Database\nThe database includes (to be described):\n\n\nCode\nfs::dir_tree(\"data\", recurse = 1)\n\n\ndata\n├── Paracou\n│   ├── README.md\n│   ├── README.qmd\n│   └── TOMST_ALT\n├── README.md\n└── README.qmd"
+  },
+  {
+    "objectID": "10_structure.html",
+    "href": "10_structure.html",
+    "title": "Structure",
+    "section": "",
+    "text": "The raw database is structured with a main data/ folder in which we find first each site (e.g. Paracou/) and then in each site all couples of projects and sensors (e.g. TOMST_ALT/). All levels are documented through README.\n\n\nCode\nfs::dir_tree(\"data\", recurse = 1, type = \"directory\")\n\n\ndata\n└── Paracou\n    └── TOMST_ALT\n\n\nFinally in each project-sensor couple we find a folder by data collection campaign with its date (e.g. 20240920/) and associated sensors metadata (TOMST_ALT.xlsx/) and campaigns metadata (e.g. 20240920.xlsx).\n\n\nCode\nfs::dir_tree(\"data/Paracou/TOMST_ALT/\", recurse = 0)\n\n\ndata/Paracou/TOMST_ALT/\n├── 20240920\n├── 20240920.xlsx\n├── 20250418\n├── 20250418.xlsx\n├── 20250930\n├── 20250930.xlsx\n├── README.md\n├── README.qmd\n└── TOMST_ALT.xlsx\n\n\nAnd in each campaign folder we find all the raw files (to be described by type of sensors):\n\n\nCode\nfs::dir_tree(\"data/Paracou/TOMST_ALT/20240920/\", recurse = 0)\n\n\ndata/Paracou/TOMST_ALT/20240920/\n├── binary_94223172_2024_09_20_0.csv\n├── binary_94223173_2024_09_20_0.csv\n├── binary_94223174_2024_09_20_0.csv\n├── binary_94223175_2024_09_20_0.csv\n├── binary_94223176_2024_09_20_0.csv\n├── binary_94223177_2024_09_20_0.csv\n├── binary_94223178_2024_09_20_0.csv\n├── binary_94223179_2024_09_20_0.csv\n├── binary_94223180_2024_09_20_0.csv\n├── binary_94223181_2024_09_20_0.csv\n├── binary_94223182_2024_09_20_0.csv\n├── binary_94244921_2024_09_20_0.csv\n├── binary_94244921_2024_09_20_1.csv\n├── binary_94244922_2024_09_20_0.csv\n├── binary_94244923_2024_09_20_0.csv\n├── binary_94244924_2024_09_20_0.csv\n├── command_94223172_2024_09_20_0.csv\n├── command_94223173_2024_09_20_0.csv\n├── command_94223174_2024_09_20_0.csv\n├── command_94223175_2024_09_20_0.csv\n├── command_94223176_2024_09_20_0.csv\n├── command_94223177_2024_09_20_0.csv\n├── command_94223178_2024_09_20_0.csv\n├── command_94223179_2024_09_20_0.csv\n├── command_94223180_2024_09_20_0.csv\n├── command_94223181_2024_09_20_0.csv\n├── command_94223181_2024_09_20_1.csv\n├── command_94223182_2024_09_20_0.csv\n├── command_94244921_2024_09_20_0.csv\n├── command_94244921_2024_09_20_1.csv\n├── command_94244922_2024_09_20_0.csv\n├── command_94244923_2024_09_20_0.csv\n├── command_94244924_2024_09_20_0.csv\n├── data_94223161_2024_09_20_0.csv\n├── data_94223162_2024_09_20_0.csv\n├── data_94223163_2024_09_20_0.csv\n├── data_94223164_2024_09_20_0.csv\n├── data_94223165_2024_09_20_0.csv\n├── data_94223166_2024_09_20_0.csv\n├── data_94223167_2024_09_20_0.csv\n├── data_94223168_2024_09_20_0.csv\n├── data_94223169_2024_09_20_0.csv\n├── data_94223170_2024_09_20_0.csv\n├── data_94223171_2024_09_20_0.csv\n├── data_94223172_2024_09_20_0.csv\n├── data_94223173_2024_09_20_0.csv\n├── data_94223174_2024_09_20_0.csv\n├── data_94223175_2024_09_20_0.csv\n├── data_94223176_2024_09_20_0.csv\n├── data_94223177_2024_09_20_0.csv\n├── data_94223178_2024_09_20_0.csv\n├── data_94223179_2024_09_20_0.csv\n├── data_94223180_2024_09_20_0.csv\n├── data_94223181_2024_09_20_0.csv\n├── data_94223182_2024_09_20_0.csv\n├── data_94244921_2024_09_20_0.csv\n├── data_94244921_2024_09_20_1.csv\n├── data_94244922_2024_09_20_0.csv\n├── data_94244923_2024_09_20_0.csv\n├── data_94244924_2024_09_20_0.csv\n├── data_94244925_2024_09_20_0.csv\n├── data_94244926_2024_09_20_0.csv\n├── data_94244927_2024_09_20_0.csv\n├── data_94244928_2024_09_20_0.csv\n└── data_94244929_2024_09_20_0.csv"
+  },
+  {
+    "objectID": "11_metadata.html#sensors",
+    "href": "11_metadata.html#sensors",
+    "title": "Metadata",
+    "section": "Sensors",
+    "text": "Sensors\nSensors metadata are project specific but they should include sensor serial number (e.g. TomstSensorNum here) and corresponding study ID (e.g. TomstID) for associated information. An ID can have in this case several sensors associated as the change of sensors here. The metadata may contain associated ecological data (e.g. light, habitat, edge) and geolocation data (e.g. distance to 3 nearest neighbours here). They should be described in a metadata sheet or in the README. Metadata should also include the project or acquisition beginning and end, and eventually calibration dates.\n\n\nCode\nreadxl::read_xlsx(\"data/Paracou/TOMST_ALT/TOMST_ALT.xlsx\") %&gt;% \n  tail() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot\nSubPlot\nTomstID\nTomstSensorNum\nTransect\nLightHabitat\nTopoHabitat\nLayonEdge\nTreeNum1\nTreeNum2\nTreeNum3\nDTree1\nDTree2\nDTree3\n\n\n\n\nP16\n23\n28\n94244926\nGap\nGap\nPlateau\nFALSE\n233689\n232805\n233735\n200\n100\n310\n\n\nP16\n23\n29\n94244927\nGap\nGap\nPlateau\nFALSE\n232928\n233639\n233699\n240\n235\n142\n\n\nP16\n23\n30\n94244928\nGap\nGap\nPlateau\nFALSE\n232816\n232847\n232817\n20\n230\n210\n\n\nP16\n23\n31\n94244929\nGap\nGap border\nPlateau\nFALSE\n232827\n231955\n232805\n155\n280\n270\n\n\nP16\n23\n32\n94244930\nGap\nSunfleck\nPlateau\nFALSE\n231911\n231797\n231915\n120\n120\n210\n\n\nP16\n23\n32\n94244935\nGap\nSunfleck\nPlateau\nFALSE\n231911\n231797\n231915\n120\n120\n210"
+  },
+  {
+    "objectID": "11_metadata.html#campaigns",
+    "href": "11_metadata.html#campaigns",
+    "title": "Metadata",
+    "section": "Campaigns",
+    "text": "Campaigns\n\nTo be discussed with Léa and consolidated.\n\nCampaigns metadata would be acquired during sampling campaigns on the collection on data and status of the sensor informing us by comparison with the last campaign on which should data should be kept and tagging possible data with defects. For the moment it only include sensor ID, the information of collection, the defect to harmonized and a free comment section. This campaigns metadata could be accompanied by a field sheet model and protocol or with a tablet acquisition tool.\n\n\nCode\nreadxl::read_xlsx(\"data/Paracou/TOMST_ALT/20240920.xlsx\") %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\nID\nfield\ndefect\ncomment\n\n\n\n\n1\nTRUE\nNA\nNA\n\n\n2\nTRUE\nNA\nNA\n\n\n3\nTRUE\nNA\nNA\n\n\n4\nTRUE\nNA\nNA\n\n\n5\nTRUE\nNA\nNA\n\n\n6\nTRUE\nNA\nNA"
+  },
+  {
+    "objectID": "12_raw_data.html#get-campaign",
+    "href": "12_raw_data.html#get-campaign",
+    "title": "Raw data",
+    "section": "Get campaign",
+    "text": "Get campaign\n\n\nColumn names need harmonization.\nWe need data check functions.\nAn automatic reports could be produced for errors (discussed at which level). I think the best would be at the sensor-project level with maybe a snakemake and singularity worklow or a simple R workflow to automate it with outputs in a separate place and thus sensor project databases and a single common databases (maybe sqlight for big ones).\nReading functions will depend on the sensors and will need to be made generic on the way they open and handle data.\nWe need to had soil data or parameters for soil moisture.\nDate filtering should be used the earliest to save memory.\n\n\n\n\nCode\nget_tomst_campaign &lt;- function(\n    path,\n    metadata,\n    metadatac,\n    utc,\n    start_date,\n    stop_date\n    ) {\n  files &lt;- list.files(path, pattern = \"data\", full.names = TRUE)\n  names(files) &lt;- list.files(path, pattern = \"data\", full.names = FALSE)\n  data &lt;- files %&gt;% \n    lapply(vroom::vroom,\n           col_select = 2:7,\n           col_types = c(\"c\", rep(\"d\", 5)), \n           col_names = F,\n           locale = locale(decimal_mark = \",\")) %&gt;% \n    bind_rows(.id = \"file\") %&gt;% \n    mutate(X2 = gsub(\".\", \"-\", X2, fixed = TRUE)) %&gt;% \n    mutate(X2 = as.POSIXct(X2)) %&gt;% \n    mutate(X2 = as_datetime(X2)) %&gt;% \n    rename(date = X2, tz = X3, t_soil = X4, t_surface = X5, t_air = X6, moisture = X7) %&gt;% \n    separate(file, c(\"data\", \"sensornum\"), convert = T) %&gt;% \n    select(-data, -tz) %&gt;% \n    mutate(date = date + utc*60*60) %&gt;% \n    filter(as_date(date) &gt;= start_date) %&gt;% \n    filter(as_date(date) &lt; stop_date)\n  metadata &lt;- readxl::read_xlsx(metadata) %&gt;% \n    select(TomstID, TomstSensorNum) %&gt;% \n    rename(id = TomstID, sensornum = TomstSensorNum)\n  metadatac &lt;- readxl::read_xlsx(metadatac) %&gt;% \n    rename_all(tolower)\n  data &lt;- metadata %&gt;% \n    left_join(metadatac) %&gt;% \n    full_join(data)\n  return(data)\n}\n\n\n\n\nCode\ndata &lt;- get_tomst_campaign(\n  path = \"data/Paracou/TOMST_ALT/20240920/\",\n  metadata = \"data/Paracou/TOMST_ALT/TOMST_ALT.xlsx\",\n  metadatac = \"data/Paracou/TOMST_ALT/20240920.xlsx\",\n  utc = -3,\n  start_date = as_date(\"20230401\"),\n  stop_date = as_date(\"20240920\")\n)\nwrite_tsv(data, \"tests/test_campaign.tsv\")\n\n\n\n\nCode\nread_tsv(\"tests/test_campaign.tsv\", n_max = 20) %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nsensornum\nfield\ndefect\ncomment\ndate\nt_soil\nt_surface\nt_air\nmoisture\n\n\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 04:00:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 04:15:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 04:30:00\n24.5000\n23.5625\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 04:45:00\n24.5000\n23.5000\n22.6875\n2468\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 05:00:00\n24.5000\n23.5000\n22.6250\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-04-01 05:15:00\n24.4375\n23.5625\n22.7500\n2468\n\n\n\n\n\n\n\nCode\nread_tsv(\"tests/test_campaign.tsv\") %&gt;% \n  filter(id == 1) %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw()"
+  },
+  {
+    "objectID": "12_raw_data.html#get-sensor-project",
+    "href": "12_raw_data.html#get-sensor-project",
+    "title": "Raw data",
+    "section": "Get sensor-project",
+    "text": "Get sensor-project\n\n\nTo automate, by end for the moment with the three folders.\nThis is heavy in memory so it should be automated with a wrokflow based on intermediary files.\n\n\n\n\nCode\ndata1 &lt;- get_tomst_campaign(\n  path = \"data/Paracou/TOMST_ALT/20240920/\",\n  metadata = \"data/Paracou/TOMST_ALT/TOMST_ALT.xlsx\",\n  metadatac = \"data/Paracou/TOMST_ALT/20240920.xlsx\",\n  utc = -3,\n  start_date = as_date(\"20230401\"),\n  stop_date = as_date(\"20240920\")\n)\ndata2 &lt;- get_tomst_campaign(\n  path = \"data/Paracou/TOMST_ALT/20250418/\",\n  metadata = \"data/Paracou/TOMST_ALT/TOMST_ALT.xlsx\",\n  metadatac = \"data/Paracou/TOMST_ALT/20250418.xlsx\",\n  utc = -3,\n  start_date = as_date(\"20240920\"),\n  stop_date = as_date(\"20250418\")\n)\ndata3 &lt;- get_tomst_campaign(\n  path = \"data/Paracou/TOMST_ALT/20250930/\",\n  metadata = \"data/Paracou/TOMST_ALT/TOMST_ALT.xlsx\",\n  metadatac = \"data/Paracou/TOMST_ALT/20250930.xlsx\",\n  utc = -3,\n  start_date = as_date(\"20250418\"),\n  stop_date = as_date(\"20250930\")\n)\ndata &lt;- bind_rows(data1 %&gt;% mutate(field = as.character(field)), data2, data3)\nwrite_tsv(data, \"tests/test_sensor-project.tsv\")\n\n\n\n\nCode\nread_tsv(\"tests/test_sensor-project.tsv\") %&gt;% \n  filter(id == 1) %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw() +\n  geom_vline(xintercept = c(\n    as_datetime(\"2024-09-20 00:00:00\"),\n    as_datetime(\"2025-04-18 00:00:00\")\n  ), col = 'lightgrey')"
+  },
+  {
+    "objectID": "12_raw_data.html#assemble",
+    "href": "12_raw_data.html#assemble",
+    "title": "Raw data",
+    "section": "Assemble",
+    "text": "Assemble\n\nTo test when using multples sensors and/or project and even sites."
+  },
+  {
+    "objectID": "13_derived_data.html",
+    "href": "13_derived_data.html",
+    "title": "Derived data",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n\nAdding a bit of cleaning error detection and metadata should do it. Ultimate objective could be to automate Fourier’s decomposition."
+  },
+  {
+    "objectID": "97_meeting.html#launch",
+    "href": "97_meeting.html#launch",
+    "title": "Meetings",
+    "section": "26/03/10 - Launch",
+    "text": "26/03/10 - Launch\nSylvain, Léa\nUpcoming."
+  }
+]

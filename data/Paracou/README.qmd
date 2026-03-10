@@ -1,0 +1,22 @@
+---
+title: "Paracou microclimate data"
+author: Sylvain Schmitt -
+date: today
+date-format: medium
+format: 
+  gfm:
+    toc: true
+    toc-depth: 2
+---
+
+Data from sensors in Paracou (listed data below). Available projects are :
+
+-   ALT : description with link.
+
+Available sensors are :
+
+-   TOMST : description with link.
+
+```{r, comment=""}
+fs::dir_tree(recurse = 1)
+```

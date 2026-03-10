@@ -1,0 +1,18 @@
+---
+title: "Guyaclim raw data"
+author: Sylvain Schmitt -
+date: today
+date-format: medium
+format: 
+  gfm:
+    toc: true
+    toc-depth: 2
+---
+
+All the raw data from Guyaclim organized first by site and then by project and sensors (listed data below). Available sites are :
+
+-   Paracou : description with link.
+
+```{r, comment=""}
+fs::dir_tree(recurse = 2)
+```

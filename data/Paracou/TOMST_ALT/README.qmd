@@ -1,0 +1,25 @@
+---
+title: "Paracou TOMST from ALT"
+author: Sylvain Schmitt -
+date: today
+date-format: medium
+format: 
+  gfm:
+    toc: true
+    toc-depth: 2
+---
+
+ALT data from TOMST sensors in Paracou (listed data below). Available campaigns are :
+
+-   20230330 - missing
+-   20230525 - missing
+-   20231016 - missing
+-   20240506 - missing
+-   20250624 - missing
+-   20240920 - ok
+-   20250418 - ok
+-   20250930 - ok
+
+```{r, comment=""}
+fs::dir_tree()
+```

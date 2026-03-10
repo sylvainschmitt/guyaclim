@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "guyaclim"
+  date: last-modified
+  chapters:
+    - index.qmd
+    - 10_structure.qmd
+    - 11_metadata.qmd
+    - 12_raw_data.qmd
+    - 13_derived_data.qmd
+  appendices:
+    - 97_meeting.qmd
+    - 99_references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    number-depth: -1
+
+editor: visual

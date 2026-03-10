@@ -1,0 +1,29 @@
+# Metadata {.unnumbered}
+
+```{r set}
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+## Sensors
+
+Sensors metadata are project specific but they should include sensor serial number (e.g. TomstSensorNum here) and corresponding study ID (e.g. TomstID) for associated information. An ID can have in this case several sensors associated as the change of sensors here. The metadata may contain associated ecological data (e.g. light, habitat, edge) and geolocation data (e.g. distance to 3 nearest neighbours here). They should be described in a metadata sheet or in the README. Metadata should also include the project or acquisition beginning and end, and eventually calibration dates.
+
+```{r sensors}
+readxl::read_xlsx("data/Paracou/TOMST_ALT/TOMST_ALT.xlsx") %>% 
+  tail() %>% 
+  knitr::kable()
+```
+
+## Campaigns
+
+> To be discussed with Léa and consolidated.
+
+Campaigns metadata would be acquired during sampling campaigns on the collection on data and status of the sensor informing us by comparison with the last campaign on which should data should be kept and tagging possible data with defects. For the moment it only include sensor ID, the information of collection, the defect to harmonized and a free comment section. This campaigns metadata could be accompanied by a field sheet model and protocol or with a tablet acquisition tool.
+
+```{r campaigns}
+readxl::read_xlsx("data/Paracou/TOMST_ALT/20240920.xlsx") %>% 
+  head() %>% 
+  knitr::kable()
+```
