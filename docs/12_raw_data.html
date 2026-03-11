@@ -509,6 +509,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="12_raw_data_files/figure-html/get_sensor-project_res-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"tests/test_sensor-project.tsv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(date, t_air)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_datetime</span>(<span class="st">"2024-09-20 00:00:00"</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_datetime</span>(<span class="st">"2025-04-18 00:00:00"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  ), <span class="at">col =</span> <span class="st">'lightgrey'</span>) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> id) <span class="sc">+</span> </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">15</span>, <span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="12_raw_data_files/figure-html/get_sensor-project_res_all-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
 </section>
 <section id="assemble" class="level2">
 <h2 class="anchored" data-anchor-id="assemble">Assemble</h2>

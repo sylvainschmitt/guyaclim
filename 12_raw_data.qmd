@@ -163,6 +163,23 @@ read_tsv("tests/test_sensor-project.tsv") %>%
   ggtitle("Sensor 32")
 ```
 
+```{r get_sensor-project_res_all}
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 10
+read_tsv("tests/test_sensor-project.tsv") %>% 
+  ggplot(aes(date, t_air)) +
+  geom_line() +
+  theme_bw() +
+  geom_vline(xintercept = c(
+    as_datetime("2024-09-20 00:00:00"),
+    as_datetime("2025-04-18 00:00:00")
+  ), col = 'lightgrey') +
+  facet_wrap(~ id) + 
+  ylim(15, 40)
+```
+
 ## Assemble
 
 > To test when using multples sensors and/or project and even sites.
