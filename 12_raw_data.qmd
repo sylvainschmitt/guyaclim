@@ -16,6 +16,30 @@ library(tidyverse)
 > -   Date filtering should be used the earliest to save memory.
 
 ```{r functions}
+read_data <- function(
+    path,
+    utc,
+    start_date,
+    stop_date
+) {
+  decimal <- read_delim(path, col_select = 5, col_names = F, 
+           delim = ";", col_types = list(X5 = col_character()), n_max = 1)$X5 %>% 
+    gsub("[^[:punct:]]", "", .)
+  if(str_length(decimal) == 0)
+    decimal <- read_delim(path, col_select = 5, col_names = F, 
+           delim = ";", col_types = list(X5 = col_character()), n_max = 2)$X5[2] %>% 
+      gsub("[^[:punct:]]", "", .)
+  read_delim(path, col_names = FALSE, locale = locale(decimal_mark = decimal),
+          col_select = c(2, 4:7)) %>% 
+    mutate(X2 = gsub(".", "-", X2, fixed = TRUE)) %>% 
+    mutate(X2 = as.POSIXct(X2)) %>% 
+    mutate(X2 = as_datetime(X2)) %>% 
+    rename(date = X2, t_soil = X4, 
+           t_surface = X5, t_air = X6, moisture = X7) %>% 
+    mutate(date = date + utc*60*60) %>% 
+    filter(as_date(date) >= start_date) %>% 
+    filter(as_date(date) < stop_date)
+}
 get_tomst_campaign <- function(
     path,
     metadata,
@@ -27,21 +51,10 @@ get_tomst_campaign <- function(
   files <- list.files(path, pattern = "data", full.names = TRUE)
   names(files) <- list.files(path, pattern = "data", full.names = FALSE)
   data <- files %>% 
-    lapply(vroom::vroom,
-           col_select = 2:7,
-           col_types = c("c", rep("d", 5)), 
-           col_names = F,
-           locale = locale(decimal_mark = ",")) %>% 
+    lapply(read_data, utc, start_date, stop_date) %>% 
     bind_rows(.id = "file") %>% 
-    mutate(X2 = gsub(".", "-", X2, fixed = TRUE)) %>% 
-    mutate(X2 = as.POSIXct(X2)) %>% 
-    mutate(X2 = as_datetime(X2)) %>% 
-    rename(date = X2, tz = X3, t_soil = X4, t_surface = X5, t_air = X6, moisture = X7) %>% 
     separate(file, c("data", "sensornum"), convert = T) %>% 
-    select(-data, -tz) %>% 
-    mutate(date = date + utc*60*60) %>% 
-    filter(as_date(date) >= start_date) %>% 
-    filter(as_date(date) < stop_date)
+    select(-data)
   metadata <- readxl::read_xlsx(metadata) %>% 
     select(TomstID, TomstSensorNum) %>% 
     rename(id = TomstID, sensornum = TomstSensorNum)
@@ -120,7 +133,7 @@ data <- bind_rows(data1 %>% mutate(field = as.character(field)), data2, data3)
 write_tsv(data, "tests/test_sensor-project.tsv")
 ```
 
-```{r get_sensor-project_res}
+```{r get_sensor-project_res1}
 #| message: false
 #| warning: false
 read_tsv("tests/test_sensor-project.tsv") %>% 
@@ -131,7 +144,23 @@ read_tsv("tests/test_sensor-project.tsv") %>%
   geom_vline(xintercept = c(
     as_datetime("2024-09-20 00:00:00"),
     as_datetime("2025-04-18 00:00:00")
-  ), col = 'lightgrey')
+  ), col = 'lightgrey') +
+  ggtitle("Sensor 1")
+```
+
+```{r get_sensor-project_res}
+#| message: false
+#| warning: false
+read_tsv("tests/test_sensor-project.tsv") %>% 
+  filter(id == 32) %>% 
+  ggplot(aes(date, t_air)) +
+  geom_line() +
+  theme_bw() +
+  geom_vline(xintercept = c(
+    as_datetime("2024-09-20 00:00:00"),
+    as_datetime("2025-04-18 00:00:00")
+  ), col = 'lightgrey') +
+  ggtitle("Sensor 32")
 ```
 
 ## Assemble
