@@ -1,0 +1,22 @@
+---
+title: "Paracou Lolly from ALT"
+author: Sylvain Schmitt -
+date: today
+date-format: medium
+format: 
+  gfm:
+    toc: true
+    toc-depth: 2
+---
+
+ALT data from Lolly sensors in Paracou (listed data below). Available campaigns are :
+
+- ?
+- 20240506
+- 20240605
+
+Metadata are currently missing. Ask Who?
+
+```{r, comment=""}
+fs::dir_tree()
+```
