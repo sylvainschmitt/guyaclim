@@ -46,7 +46,6 @@ read_tsv("db/obs.tsv") |>
 #| warning: false
 #| fig-width: 10
 #| fig-height: 10
-#| cache: true
 read_tsv("db/guyaclim.tsv") |> 
   filter(variable == "t_air") |> 
   ggplot(aes(date, value)) +
