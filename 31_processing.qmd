@@ -9,7 +9,21 @@ paracou_alt_tomst <- read_tsv("datasets/Paracou_ALT_TOMST.tsv") |>
   select(site, project, sensor, id, sensornum, date,
          t_soil, t_surface, t_air, moisture) |> 
   pivot_longer(cols = t_soil:moisture, names_to = "variable")
-bind_rows(paracou_alt_tomst) |> 
+nouraguespp_alt_tomst <- read_tsv("datasets/NouraguesPP_ALT_TOMST.tsv") |> 
+  mutate(site = "NouraguesPP", project = "ALT", sensor = "TOMST") |> 
+  select(site, project, sensor, id, sensornum, date,
+         t_soil, t_surface, t_air, moisture) |> 
+  pivot_longer(cols = t_soil:moisture, names_to = "variable")
+arbocel_hest_tomst <- read_tsv("datasets/Arbocel_HES_TOMST.tsv") |> 
+  mutate(site = "Arbocel", project = "HES", sensor = "TOMST") |> 
+  select(site, project, sensor, id, sensornum, date,
+         t_soil, t_surface, t_air, moisture) |> 
+  pivot_longer(cols = t_soil:moisture, names_to = "variable")
+bind_rows(
+  paracou_alt_tomst,
+  arbocel_hest_tomst,
+  nouraguespp_alt_tomst
+) |> 
   write_tsv("db/guyaclim.tsv")
 ```
 

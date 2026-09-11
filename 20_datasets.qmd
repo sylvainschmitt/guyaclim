@@ -7,9 +7,9 @@ dplyr::tribble(
   ~Site, ~Project, ~Sensor, ~Status, ~Comment,
   "Paracou", "ALT", "TOMST", "To update", "",
   "Paracou", "ALT", "HOBO", "To do", "",
-  "Nouragues Petit Plateau", "ALT", "TOMST", "To do", "",
-  "Arbocel", "HESS", "TOMST", "To do", "",
-  "Laussat", "HESS", "TOMST", "To do", "",
+  "Nouragues Petit Plateau", "ALT", "TOMST", "Done", "",
+  "Arbocel", "HES", "TOMST", "Done", "",
+  "Laussat", "HES", "TOMST", "Empty", "",
 ) |> knitr::kable()
 ```
 

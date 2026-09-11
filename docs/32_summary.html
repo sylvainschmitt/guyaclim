@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./23_nouraguespp_alt_tomst.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nouragues Petit Plateau TOMST ALT</span></a>
+ <span class="menu-text">Nouragues PP TOMST ALT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -310,17 +310,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"db/guyaclim.tsv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(site, project, sensor, variable) <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(site, project, sensor, variable, id) <span class="sc">|&gt;</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor) <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">variables =</span> <span class="fu">paste0</span>(variable, <span class="at">collapse =</span> <span class="st">", "</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_tsv</span>(<span class="st">"db/vars.tsv"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"db/guyaclim.tsv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, id, variable) <span class="sc">|&gt;</span> </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, variable) <span class="sc">|&gt;</span> </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(n), <span class="at">median =</span> <span class="fu">median</span>(n), <span class="at">max =</span> <span class="fu">max</span>(n)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_tsv</span>(<span class="st">"db/obs.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, variable) <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sensors =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, sensors) <span class="sc">|&gt;</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">variables =</span> <span class="fu">paste0</span>(variable, <span class="at">collapse =</span> <span class="st">", "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_tsv</span>(<span class="st">"db/vars.tsv"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"db/guyaclim.tsv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, id, variable) <span class="sc">|&gt;</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site, project, sensor, variable) <span class="sc">|&gt;</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(n), <span class="at">median =</span> <span class="fu">median</span>(n), <span class="at">max =</span> <span class="fu">max</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_tsv</span>(<span class="st">"db/obs.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>Available variables are:</p>
@@ -331,20 +333,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">site</th>
 <th style="text-align: left;">project</th>
 <th style="text-align: left;">sensor</th>
+<th style="text-align: right;">sensors</th>
 <th style="text-align: left;">variables</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HES</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">moisture, t_air, t_soil, t_surface</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NouraguesPP</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">moisture, t_air, t_soil, t_surface</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Paracou</td>
 <td style="text-align: left;">ALT</td>
 <td style="text-align: left;">TOMST</td>
-<td style="text-align: left;">t_soil, t_surface, t_air, moisture</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">moisture, t_air, t_soil, t_surface</td>
 </tr>
 </tbody>
 </table>
@@ -371,6 +396,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HES</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">moisture</td>
+<td style="text-align: right;">384</td>
+<td style="text-align: right;">384.0</td>
+<td style="text-align: right;">384</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HES</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_air</td>
+<td style="text-align: right;">384</td>
+<td style="text-align: right;">384.0</td>
+<td style="text-align: right;">384</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HES</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_soil</td>
+<td style="text-align: right;">384</td>
+<td style="text-align: right;">384.0</td>
+<td style="text-align: right;">384</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HES</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_surface</td>
+<td style="text-align: right;">384</td>
+<td style="text-align: right;">384.0</td>
+<td style="text-align: right;">384</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NouraguesPP</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">moisture</td>
+<td style="text-align: right;">10,632</td>
+<td style="text-align: right;">42,982.0</td>
+<td style="text-align: right;">54,643</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NouraguesPP</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_air</td>
+<td style="text-align: right;">10,632</td>
+<td style="text-align: right;">42,982.0</td>
+<td style="text-align: right;">54,643</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NouraguesPP</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_soil</td>
+<td style="text-align: right;">10,632</td>
+<td style="text-align: right;">42,982.0</td>
+<td style="text-align: right;">54,643</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NouraguesPP</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">t_surface</td>
+<td style="text-align: right;">10,632</td>
+<td style="text-align: right;">42,982.0</td>
+<td style="text-align: right;">54,643</td>
+</tr>
 <tr class="odd">
 <td style="text-align: left;">Paracou</td>
 <td style="text-align: left;">ALT</td>
@@ -409,6 +506,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"db/guyaclim.tsv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(variable <span class="sc">==</span> <span class="st">"t_air"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(date, value)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> id), <span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> site, <span class="at">nrow =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">15</span>, <span class="dv">40</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="32_summary_files/figure-html/fig-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 

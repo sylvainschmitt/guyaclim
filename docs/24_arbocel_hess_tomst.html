@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./23_nouraguespp_alt_tomst.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nouragues Petit Plateau TOMST ALT</span></a>
+ <span class="menu-text">Nouragues PP TOMST ALT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -281,6 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#campaigns" id="toc-campaigns" class="nav-link" data-scroll-target="#campaigns">Campaigns</a></li>
   <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
   <li><a href="#other-files" id="toc-other-files" class="nav-link" data-scroll-target="#other-files">Other files</a></li>
   </ul>
@@ -322,18 +323,173 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_tomst_data.R"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_tomst_campaign.R"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_sensor_project.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_sensor_project.R"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_sensor_project</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"data/Arbocel_HES_TOMST/"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sensor =</span> <span class="st">"TOMST"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(data, <span class="st">"datasets/Arbocel_HES_TOMST.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+</div>
+</section>
+<section id="campaigns" class="level2">
+<h2 class="anchored" data-anchor-id="campaigns">Campaigns</h2>
+<p>Currently available campaigns are:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/Arbocel_HES_TOMST/campaigns.xlsx"</span>) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">campaign</th>
+<th style="text-align: right;">utc</th>
+<th style="text-align: right;">start</th>
+<th style="text-align: right;">end</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">20240920</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20240916</td>
+<td style="text-align: right;">20240920</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </section>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"datasets/Arbocel_HES_TOMST.tsv"</span>, <span class="at">n_max =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 24%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">sensornum</th>
+<th style="text-align: left;">field</th>
+<th style="text-align: left;">defect</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">t_soil</th>
+<th style="text-align: right;">t_surface</th>
+<th style="text-align: right;">t_air</th>
+<th style="text-align: right;">moisture</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 22:00:00</td>
+<td style="text-align: right;">31.5000</td>
+<td style="text-align: right;">27.8750</td>
+<td style="text-align: right;">27.3125</td>
+<td style="text-align: right;">1547</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 22:15:00</td>
+<td style="text-align: right;">31.5000</td>
+<td style="text-align: right;">27.8125</td>
+<td style="text-align: right;">27.2500</td>
+<td style="text-align: right;">1546</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 22:30:00</td>
+<td style="text-align: right;">31.3750</td>
+<td style="text-align: right;">27.8750</td>
+<td style="text-align: right;">27.3750</td>
+<td style="text-align: right;">1546</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 22:45:00</td>
+<td style="text-align: right;">31.3750</td>
+<td style="text-align: right;">27.6875</td>
+<td style="text-align: right;">27.2500</td>
+<td style="text-align: right;">1546</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 23:00:00</td>
+<td style="text-align: right;">31.3125</td>
+<td style="text-align: right;">27.6875</td>
+<td style="text-align: right;">27.1875</td>
+<td style="text-align: right;">1546</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94244945</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2024-09-15 23:15:00</td>
+<td style="text-align: right;">31.2500</td>
+<td style="text-align: right;">27.6250</td>
+<td style="text-align: right;">27.1250</td>
+<td style="text-align: right;">1545</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"datasets/Arbocel_HES_TOMST.tsv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(date, t_air)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> id) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">15</span>, <span class="dv">40</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="24_arbocel_hess_tomst_files/figure-html/fig-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="other-files" class="level2">
 <h2 class="anchored" data-anchor-id="other-files">Other files</h2>
-<blockquote class="blockquote">
-<p>To be described.</p>
-</blockquote>
+<p>The dataset also include Garbiel mission report (<code>Mission_report_GHes_Arbocel_September_2024.pdf</code>).</p>
 
 
 </section>
@@ -741,8 +897,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./23_nouraguespp_alt_tomst.html" class="pagination-link" aria-label="Nouragues Petit Plateau TOMST ALT">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nouragues Petit Plateau TOMST ALT</span>
+      <a href="./23_nouraguespp_alt_tomst.html" class="pagination-link" aria-label="Nouragues PP TOMST ALT">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nouragues PP TOMST ALT</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

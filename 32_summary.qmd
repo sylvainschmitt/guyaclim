@@ -9,9 +9,11 @@ library(tidyverse)
 ```{r prep}
 #| eval: false
 read_tsv("db/guyaclim.tsv") |> 
-  select(site, project, sensor, variable) |> 
+  select(site, project, sensor, variable, id) |> 
   unique() |> 
-  group_by(site, project, sensor) |> 
+  group_by(site, project, sensor, variable) |> 
+  summarise(sensors = n()) |> 
+  group_by(site, project, sensor, sensors) |> 
   summarise(variables = paste0(variable, collapse = ", ")) |> 
   write_tsv("db/vars.tsv")
 read_tsv("db/guyaclim.tsv") |> 
@@ -37,4 +39,19 @@ Number of observations are:
 #| warning: false
 read_tsv("db/obs.tsv") |> 
   knitr::kable(format.args = list(big.mark = ",", scientific = FALSE))
+```
+
+```{r fig}
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 10
+#| cache: true
+read_tsv("db/guyaclim.tsv") |> 
+  filter(variable == "t_air") |> 
+  ggplot(aes(date, value)) +
+  geom_line(aes(group = id), alpha = .1) +
+  theme_bw() +
+  facet_wrap(~ site, nrow = 3) + 
+  ylim(15, 40)
 ```

@@ -1,36 +1,3 @@
 # Laussat TOMST Hess {.unnumbered}
 
-```{r set}
-#| message: false
-#| warning: false
-library(tidyverse)
-```
-
-## Preparation
-
-This is the chunk to manually prepare the dataset, this should be automated in the future.
-
-```{r prep}
-#| eval: false
-source("scripts/read_tomst_data.R")
-source("scripts/read_tomst_campaign.R")
-source("scripts/read_sensor_project.R")
-```
-
-## Dataset
-
-```{r tab}
-#| message: false
-#| warning: false
-```
-
-```{r fig}
-#| message: false
-#| warning: false
-#| fig-width: 10
-#| fig-height: 10
-```
-
-## Other files
-
-> To be described.
+> I need to get the raw data.

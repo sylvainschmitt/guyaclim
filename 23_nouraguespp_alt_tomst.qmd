@@ -15,6 +15,21 @@ This is the chunk to manually prepare the dataset, this should be automated in t
 source("scripts/read_tomst_data.R")
 source("scripts/read_tomst_campaign.R")
 source("scripts/read_sensor_project.R")
+data <- read_sensor_project(
+  path = "data/NouraguesPP_ALT_TOMST/",
+  sensor = "TOMST"
+)
+write_tsv(data, "datasets/NouraguesPP_ALT_TOMST.tsv")
+```
+
+## Campaigns
+
+Currently available campaigns are:
+
+```{r campaigns}
+#| message: false
+#| warning: false
+readxl::read_xlsx("data/NouraguesPP_ALT_TOMST/campaigns.xlsx") |> knitr::kable()
 ```
 
 ## Dataset
@@ -22,6 +37,9 @@ source("scripts/read_sensor_project.R")
 ```{r tab}
 #| message: false
 #| warning: false
+read_tsv("datasets/NouraguesPP_ALT_TOMST.tsv", n_max = 20) %>% 
+  head() %>% 
+  knitr::kable()
 ```
 
 ```{r fig}
@@ -29,8 +47,14 @@ source("scripts/read_sensor_project.R")
 #| warning: false
 #| fig-width: 10
 #| fig-height: 10
+read_tsv("datasets/NouraguesPP_ALT_TOMST.tsv") %>% 
+  ggplot(aes(date, t_air)) +
+  geom_line() +
+  theme_bw() +
+  facet_wrap(~ id) + 
+  ylim(15, 40)
 ```
 
 ## Other files
 
-> To be described.
+> `gis/` folder includes GIS data about the sensors and site to be opened in Qgis.

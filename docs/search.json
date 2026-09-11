@@ -200,11 +200,22 @@
     ]
   },
   {
+    "objectID": "21_paracou_alt_tomst.html#campaigns",
+    "href": "21_paracou_alt_tomst.html#campaigns",
+    "title": "Paracou TOMST ALT",
+    "section": "Campaigns",
+    "text": "Campaigns\nCurrently available campaigns are:\n\n\nCode\nreadxl::read_xlsx(\"data/Paracou_ALT_TOMST/campaigns.xlsx\") |&gt; knitr::kable()\n\n\n\n\n\ncampaign\nutc\nstart\nend\n\n\n\n\n20240920\n-3\n20230401\n20240920\n\n\n20250418\n-3\n20240920\n20250418\n\n\n20250930\n-3\n20250418\n20250930",
+    "crumbs": [
+      "Datasets",
+      "Paracou TOMST ALT"
+    ]
+  },
+  {
     "objectID": "21_paracou_alt_tomst.html#dataset",
     "href": "21_paracou_alt_tomst.html#dataset",
     "title": "Paracou TOMST ALT",
     "section": "Dataset",
-    "text": "Dataset\n\n\nCode\nread_tsv(\"datasets/Paracou_ALT_TOMST.tsv\", n_max = 20) %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nsensornum\nfield\ndefect\ncomment\ndate\nt_soil\nt_surface\nt_air\nmoisture\n\n\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:00:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:15:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:30:00\n24.5000\n23.5625\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:45:00\n24.5000\n23.5000\n22.6875\n2468\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 23:00:00\n24.5000\n23.5000\n22.6250\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 23:15:00\n24.4375\n23.5625\n22.7500\n2468\n\n\n\n\n\n\n\nCode\nread_tsv(\"datasets/Paracou_ALT_TOMST.tsv\") %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw() +\n  geom_vline(xintercept = c(\n    as_datetime(\"2024-09-20 00:00:00\"),\n    as_datetime(\"2025-04-18 00:00:00\")\n  ), col = 'lightgrey') +\n  facet_wrap(~ id) + \n  ylim(15, 40)",
+    "text": "Dataset\n\n\nCode\nread_tsv(\"datasets/Paracou_ALT_TOMST.tsv\", n_max = 20) %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nsensornum\nfield\ndefect\ncomment\ndate\nt_soil\nt_surface\nt_air\nmoisture\n\n\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:00:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:15:00\n24.5000\n23.6250\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:30:00\n24.5000\n23.5625\n22.7500\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 22:45:00\n24.5000\n23.5000\n22.6875\n2468\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 23:00:00\n24.5000\n23.5000\n22.6250\n2469\n\n\n1\n94223161\nTRUE\nNA\nNA\n2023-03-31 23:15:00\n24.4375\n23.5625\n22.7500\n2468\n\n\n\n\n\n\n\nCode\nread_tsv(\"datasets/Paracou_ALT_TOMST.tsv\") %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw() +\n  facet_wrap(~ id) + \n  ylim(15, 40)",
     "crumbs": [
       "Datasets",
       "Paracou TOMST ALT"
@@ -237,29 +248,7 @@
     "href": "22_paracou_alt_hobo.html",
     "title": "Paracou HOBO ALT",
     "section": "",
-    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")",
-    "crumbs": [
-      "Datasets",
-      "Paracou HOBO ALT"
-    ]
-  },
-  {
-    "objectID": "22_paracou_alt_hobo.html#dataset",
-    "href": "22_paracou_alt_hobo.html#dataset",
-    "title": "Paracou HOBO ALT",
-    "section": "Dataset",
-    "text": "Dataset",
-    "crumbs": [
-      "Datasets",
-      "Paracou HOBO ALT"
-    ]
-  },
-  {
-    "objectID": "22_paracou_alt_hobo.html#other-files",
-    "href": "22_paracou_alt_hobo.html#other-files",
-    "title": "Paracou HOBO ALT",
-    "section": "Other files",
-    "text": "Other files\n\nTo be described.",
+    "text": "I need to restructure each campaign metadata, sensor metadata, and prepare all campaigns metadata, as well as prepare HOBO specific reader.",
     "crumbs": [
       "Datasets",
       "Paracou HOBO ALT"
@@ -268,9 +257,20 @@
   {
     "objectID": "23_nouraguespp_alt_tomst.html",
     "href": "23_nouraguespp_alt_tomst.html",
-    "title": "Nouragues Petit Plateau TOMST ALT",
+    "title": "Nouragues PP TOMST ALT",
     "section": "",
-    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")",
+    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")\ndata &lt;- read_sensor_project(\n  path = \"data/NouraguesPP_ALT_TOMST/\",\n  sensor = \"TOMST\"\n)\nwrite_tsv(data, \"datasets/NouraguesPP_ALT_TOMST.tsv\")",
+    "crumbs": [
+      "Datasets",
+      "Nouragues PP TOMST ALT"
+    ]
+  },
+  {
+    "objectID": "23_nouraguespp_alt_tomst.html#campaigns",
+    "href": "23_nouraguespp_alt_tomst.html#campaigns",
+    "title": "Nouragues PP TOMST ALT",
+    "section": "Campaigns",
+    "text": "Campaigns\nCurrently available campaigns are:\n\n\nCode\nreadxl::read_xlsx(\"data/NouraguesPP_ALT_TOMST/campaigns.xlsx\") |&gt; knitr::kable()\n\n\n\n\n\ncampaign\nutc\nstart\nend\n\n\n\n\n20230222\n-3\n20221103\n20230222\n\n\n20230828\n-3\n20230222\n20230828\n\n\n20230925\n-3\n20230828\n20230925\n\n\n20240222\n-3\n20230925\n20240222\n\n\n20240620\n-3\n20240222\n20240620",
     "crumbs": [
       "Datasets",
       "Nouragues PP TOMST ALT"
@@ -279,9 +279,9 @@
   {
     "objectID": "23_nouraguespp_alt_tomst.html#dataset",
     "href": "23_nouraguespp_alt_tomst.html#dataset",
-    "title": "Nouragues Petit Plateau TOMST ALT",
+    "title": "Nouragues PP TOMST ALT",
     "section": "Dataset",
-    "text": "Dataset",
+    "text": "Dataset\n\n\nCode\nread_tsv(\"datasets/NouraguesPP_ALT_TOMST.tsv\", n_max = 20) %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nsensornum\nfield\ndefect\ncomment\ndate\nt_soil\nt_surface\nt_air\nmoisture\n\n\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 06:00:00\n23.3125\n24.3750\n26.6250\n398\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 06:15:00\n22.3125\n23.3750\n23.4375\n394\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 06:30:00\n22.0000\n22.7500\n22.8125\n392\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 06:45:00\n21.8750\n22.3750\n22.6250\n391\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 07:00:00\n21.8750\n22.2500\n22.5625\n391\n\n\n1\n94244901\nTRUE\nNA\nNA\n2022-11-03 07:15:00\n21.8125\n22.1875\n22.5000\n390\n\n\n\n\n\n\n\nCode\nread_tsv(\"datasets/NouraguesPP_ALT_TOMST.tsv\") %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw() +\n  facet_wrap(~ id) + \n  ylim(15, 40)",
     "crumbs": [
       "Datasets",
       "Nouragues PP TOMST ALT"
@@ -290,9 +290,9 @@
   {
     "objectID": "23_nouraguespp_alt_tomst.html#other-files",
     "href": "23_nouraguespp_alt_tomst.html#other-files",
-    "title": "Nouragues Petit Plateau TOMST ALT",
+    "title": "Nouragues PP TOMST ALT",
     "section": "Other files",
-    "text": "Other files\n\nTo be described.",
+    "text": "Other files\n\ngis/ folder includes GIS data about the sensors and site to be opened in Qgis.",
     "crumbs": [
       "Datasets",
       "Nouragues PP TOMST ALT"
@@ -303,7 +303,18 @@
     "href": "24_arbocel_hess_tomst.html",
     "title": "Arbocel TOMST Hess",
     "section": "",
-    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")",
+    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")\ndata &lt;- read_sensor_project(\n  path = \"data/Arbocel_HES_TOMST/\",\n  sensor = \"TOMST\"\n)\nwrite_tsv(data, \"datasets/Arbocel_HES_TOMST.tsv\")",
+    "crumbs": [
+      "Datasets",
+      "Arbocel TOMST Hess"
+    ]
+  },
+  {
+    "objectID": "24_arbocel_hess_tomst.html#campaigns",
+    "href": "24_arbocel_hess_tomst.html#campaigns",
+    "title": "Arbocel TOMST Hess",
+    "section": "Campaigns",
+    "text": "Campaigns\nCurrently available campaigns are:\n\n\nCode\nreadxl::read_xlsx(\"data/Arbocel_HES_TOMST/campaigns.xlsx\") |&gt; knitr::kable()\n\n\n\n\n\ncampaign\nutc\nstart\nend\n\n\n\n\n20240920\n-3\n20240916\n20240920",
     "crumbs": [
       "Datasets",
       "Arbocel TOMST Hess"
@@ -314,7 +325,7 @@
     "href": "24_arbocel_hess_tomst.html#dataset",
     "title": "Arbocel TOMST Hess",
     "section": "Dataset",
-    "text": "Dataset",
+    "text": "Dataset\n\n\nCode\nread_tsv(\"datasets/Arbocel_HES_TOMST.tsv\", n_max = 20) %&gt;% \n  head() %&gt;% \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nsensornum\nfield\ndefect\ndate\nt_soil\nt_surface\nt_air\nmoisture\n\n\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 22:00:00\n31.5000\n27.8750\n27.3125\n1547\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 22:15:00\n31.5000\n27.8125\n27.2500\n1546\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 22:30:00\n31.3750\n27.8750\n27.3750\n1546\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 22:45:00\n31.3750\n27.6875\n27.2500\n1546\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 23:00:00\n31.3125\n27.6875\n27.1875\n1546\n\n\n1\n94244945\nTRUE\nNA\n2024-09-15 23:15:00\n31.2500\n27.6250\n27.1250\n1545\n\n\n\n\n\n\n\nCode\nread_tsv(\"datasets/Arbocel_HES_TOMST.tsv\") %&gt;% \n  ggplot(aes(date, t_air)) +\n  geom_line() +\n  theme_bw() +\n  facet_wrap(~ id) + \n  ylim(15, 40)",
     "crumbs": [
       "Datasets",
       "Arbocel TOMST Hess"
@@ -325,7 +336,7 @@
     "href": "24_arbocel_hess_tomst.html#other-files",
     "title": "Arbocel TOMST Hess",
     "section": "Other files",
-    "text": "Other files\n\nTo be described.",
+    "text": "Other files\nThe dataset also include Garbiel mission report (Mission_report_GHes_Arbocel_September_2024.pdf).",
     "crumbs": [
       "Datasets",
       "Arbocel TOMST Hess"
@@ -336,29 +347,7 @@
     "href": "25_laussat_hess_tomst.html",
     "title": "Laussat TOMST Hess",
     "section": "",
-    "text": "Preparation\nThis is the chunk to manually prepare the dataset, this should be automated in the future.\nCode\nsource(\"scripts/read_tomst_data.R\")\nsource(\"scripts/read_tomst_campaign.R\")\nsource(\"scripts/read_sensor_project.R\")",
-    "crumbs": [
-      "Datasets",
-      "Laussat TOMST Hess"
-    ]
-  },
-  {
-    "objectID": "25_laussat_hess_tomst.html#dataset",
-    "href": "25_laussat_hess_tomst.html#dataset",
-    "title": "Laussat TOMST Hess",
-    "section": "Dataset",
-    "text": "Dataset",
-    "crumbs": [
-      "Datasets",
-      "Laussat TOMST Hess"
-    ]
-  },
-  {
-    "objectID": "25_laussat_hess_tomst.html#other-files",
-    "href": "25_laussat_hess_tomst.html#other-files",
-    "title": "Laussat TOMST Hess",
-    "section": "Other files",
-    "text": "Other files\n\nTo be described.",
+    "text": "I need to get the raw data.",
     "crumbs": [
       "Datasets",
       "Laussat TOMST Hess"
@@ -379,7 +368,7 @@
     "href": "31_processing.html",
     "title": "Datasets processing",
     "section": "",
-    "text": "Datasets processing is for the moment pretty basic based on the following chunk:\n\n\nCode\nparacou_alt_tomst &lt;- read_tsv(\"datasets/Paracou_ALT_TOMST.tsv\") |&gt; \n  mutate(site = \"Paracou\", project = \"ALT\", sensor = \"TOMST\") |&gt; \n  select(site, project, sensor, id, sensornum, date,\n         t_soil, t_surface, t_air, moisture) |&gt; \n  pivot_longer(cols = t_soil:moisture, names_to = \"variable\")\nbind_rows(paracou_alt_tomst) |&gt; \n  write_tsv(\"db/guyaclim.tsv\")\n\n\nIt combines all datasets across sites, sensor and projects in a single database (csv or sqlite or both). But to do so some metadata will be lost on the way. Current columns are:\n\nsite - site name\nproject - project name\nsensor - sensor name\nid - sensor id in the project\nsensornum - manufacturer sensor id\ndate - sampling date and time\nvariable - variable measured:\n\nt_soil: soil temperature (-8 cm for TOMST)\nt_air: air temperature (15 cm for TOMST)\nt_surface: surface temperature (0 cm for TOMST)\nmoisture: electric moisture to be transformed into soil water content with soil texture (table to be added)\n\nvalue - value of the measured variable\n\nt_soil: soil temperature in degree Celsisus\nt_air: air temperature in degree Celsisus\nt_surface: surface temperature in degree Celsisus\nmoisture: electric moisture",
+    "text": "Datasets processing is for the moment pretty basic based on the following chunk:\n\n\nCode\nparacou_alt_tomst &lt;- read_tsv(\"datasets/Paracou_ALT_TOMST.tsv\") |&gt; \n  mutate(site = \"Paracou\", project = \"ALT\", sensor = \"TOMST\") |&gt; \n  select(site, project, sensor, id, sensornum, date,\n         t_soil, t_surface, t_air, moisture) |&gt; \n  pivot_longer(cols = t_soil:moisture, names_to = \"variable\")\nnouraguespp_alt_tomst &lt;- read_tsv(\"datasets/NouraguesPP_ALT_TOMST.tsv\") |&gt; \n  mutate(site = \"NouraguesPP\", project = \"ALT\", sensor = \"TOMST\") |&gt; \n  select(site, project, sensor, id, sensornum, date,\n         t_soil, t_surface, t_air, moisture) |&gt; \n  pivot_longer(cols = t_soil:moisture, names_to = \"variable\")\narbocel_hest_tomst &lt;- read_tsv(\"datasets/Arbocel_HES_TOMST.tsv\") |&gt; \n  mutate(site = \"Arbocel\", project = \"HES\", sensor = \"TOMST\") |&gt; \n  select(site, project, sensor, id, sensornum, date,\n         t_soil, t_surface, t_air, moisture) |&gt; \n  pivot_longer(cols = t_soil:moisture, names_to = \"variable\")\nbind_rows(\n  paracou_alt_tomst,\n  arbocel_hest_tomst,\n  nouraguespp_alt_tomst\n) |&gt; \n  write_tsv(\"db/guyaclim.tsv\")\n\n\nIt combines all datasets across sites, sensor and projects in a single database (csv or sqlite or both). But to do so some metadata will be lost on the way. Current columns are:\n\nsite - site name\nproject - project name\nsensor - sensor name\nid - sensor id in the project\nsensornum - manufacturer sensor id\ndate - sampling date and time\nvariable - variable measured:\n\nt_soil: soil temperature (-8 cm for TOMST)\nt_air: air temperature (15 cm for TOMST)\nt_surface: surface temperature (0 cm for TOMST)\nmoisture: electric moisture to be transformed into soil water content with soil texture (table to be added)\n\nvalue - value of the measured variable\n\nt_soil: soil temperature in degree Celsisus\nt_air: air temperature in degree Celsisus\nt_surface: surface temperature in degree Celsisus\nmoisture: electric moisture",
     "crumbs": [
       "Database",
       "Datasets processing"
@@ -390,7 +379,7 @@
     "href": "32_summary.html",
     "title": "Database summary",
     "section": "",
-    "text": "Code\nlibrary(tidyverse)\n\n\n\n\nCode\nread_tsv(\"db/guyaclim.tsv\") |&gt; \n  select(site, project, sensor, variable) |&gt; \n  unique() |&gt; \n  group_by(site, project, sensor) |&gt; \n  summarise(variables = paste0(variable, collapse = \", \")) |&gt; \n  write_tsv(\"db/vars.tsv\")\nread_tsv(\"db/guyaclim.tsv\") |&gt; \n  group_by(site, project, sensor, id, variable) |&gt; \n  summarise(n = n()) |&gt; \n  group_by(site, project, sensor, variable) |&gt; \n  summarise(min = min(n), median = median(n), max = max(n)) |&gt; \n  write_tsv(\"db/obs.tsv\")\n\n\nAvailable variables are:\n\n\nCode\nread_tsv(\"db/vars.tsv\") |&gt; knitr::kable()\n\n\n\n\n\nsite\nproject\nsensor\nvariables\n\n\n\n\nParacou\nALT\nTOMST\nt_soil, t_surface, t_air, moisture\n\n\n\n\n\nNumber of observations are:\n\n\nCode\nread_tsv(\"db/obs.tsv\") |&gt; \n  knitr::kable(format.args = list(big.mark = \",\", scientific = FALSE))\n\n\n\n\n\nsite\nproject\nsensor\nvariable\nmin\nmedian\nmax\n\n\n\n\nParacou\nALT\nTOMST\nmoisture\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_air\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_soil\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_surface\n36,004\n87,627.5\n87,650",
+    "text": "Code\nlibrary(tidyverse)\n\n\n\n\nCode\nread_tsv(\"db/guyaclim.tsv\") |&gt; \n  select(site, project, sensor, variable, id) |&gt; \n  unique() |&gt; \n  group_by(site, project, sensor, variable) |&gt; \n  summarise(sensors = n()) |&gt; \n  group_by(site, project, sensor, sensors) |&gt; \n  summarise(variables = paste0(variable, collapse = \", \")) |&gt; \n  write_tsv(\"db/vars.tsv\")\nread_tsv(\"db/guyaclim.tsv\") |&gt; \n  group_by(site, project, sensor, id, variable) |&gt; \n  summarise(n = n()) |&gt; \n  group_by(site, project, sensor, variable) |&gt; \n  summarise(min = min(n), median = median(n), max = max(n)) |&gt; \n  write_tsv(\"db/obs.tsv\")\n\n\nAvailable variables are:\n\n\nCode\nread_tsv(\"db/vars.tsv\") |&gt; knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\nsite\nproject\nsensor\nsensors\nvariables\n\n\n\n\nArbocel\nHES\nTOMST\n14\nmoisture, t_air, t_soil, t_surface\n\n\nNouraguesPP\nALT\nTOMST\n21\nmoisture, t_air, t_soil, t_surface\n\n\nParacou\nALT\nTOMST\n32\nmoisture, t_air, t_soil, t_surface\n\n\n\n\n\nNumber of observations are:\n\n\nCode\nread_tsv(\"db/obs.tsv\") |&gt; \n  knitr::kable(format.args = list(big.mark = \",\", scientific = FALSE))\n\n\n\n\n\nsite\nproject\nsensor\nvariable\nmin\nmedian\nmax\n\n\n\n\nArbocel\nHES\nTOMST\nmoisture\n384\n384.0\n384\n\n\nArbocel\nHES\nTOMST\nt_air\n384\n384.0\n384\n\n\nArbocel\nHES\nTOMST\nt_soil\n384\n384.0\n384\n\n\nArbocel\nHES\nTOMST\nt_surface\n384\n384.0\n384\n\n\nNouraguesPP\nALT\nTOMST\nmoisture\n10,632\n42,982.0\n54,643\n\n\nNouraguesPP\nALT\nTOMST\nt_air\n10,632\n42,982.0\n54,643\n\n\nNouraguesPP\nALT\nTOMST\nt_soil\n10,632\n42,982.0\n54,643\n\n\nNouraguesPP\nALT\nTOMST\nt_surface\n10,632\n42,982.0\n54,643\n\n\nParacou\nALT\nTOMST\nmoisture\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_air\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_soil\n36,004\n87,627.5\n87,650\n\n\nParacou\nALT\nTOMST\nt_surface\n36,004\n87,627.5\n87,650\n\n\n\n\n\n\n\nCode\nread_tsv(\"db/guyaclim.tsv\") |&gt; \n  filter(variable == \"t_air\") |&gt; \n  ggplot(aes(date, value)) +\n  geom_line(aes(group = id), alpha = .1) +\n  theme_bw() +\n  facet_wrap(~ site, nrow = 3) + \n  ylim(15, 40)",
     "crumbs": [
       "Database",
       "Database summary"
@@ -405,17 +394,6 @@
     "crumbs": [
       "Appendices",
       "Meetings"
-    ]
-  },
-  {
-    "objectID": "21_paracou_alt_tomst.html#campaigns",
-    "href": "21_paracou_alt_tomst.html#campaigns",
-    "title": "Paracou TOMST ALT",
-    "section": "Campaigns",
-    "text": "Campaigns\nCurrently available campaigns are:\n\n\nCode\nreadxl::read_xlsx(\"data/Paracou_ALT_TOMST/campaigns.xlsx\") |&gt; knitr::kable()\n\n\n\n\n\ncampaign\nutc\nstart\nend\n\n\n\n\n20240920\n-3\n20230401\n20240920\n\n\n20250418\n-3\n20240920\n20250418\n\n\n20250930\n-3\n20250418\n20250930",
-    "crumbs": [
-      "Datasets",
-      "Paracou TOMST ALT"
     ]
   }
 ]
