@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Meetings – guyaclim</title>
+<title>Datasets – guyaclim</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,8 +71,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99_references.html" rel="next">
-<link href="./32_summary.html" rel="prev">
+<link href="./21_paracou_alt_tomst.html" rel="next">
+<link href="./13_processing.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_datasets.html">Datasets</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./20_datasets.html" class="sidebar-item-text sidebar-link">
+            <a href="./20_datasets.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Datasets</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -223,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meetings</span></a>
   </div>
 </li>
@@ -245,16 +280,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#launch" id="toc-launch" class="nav-link active" data-scroll-target="#launch">26/03/10 - Launch</a></li>
+  <li><a href="#sites" id="toc-sites" class="nav-link active" data-scroll-target="#sites">Sites</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
+  <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors">Sensors</a>
+  <ul class="collapse">
+  <li><a href="#tomst-tms4" id="toc-tomst-tms4" class="nav-link" data-scroll-target="#tomst-tms4">Tomst TMS4</a></li>
+  <li><a href="#hobo" id="toc-hobo" class="nav-link" data-scroll-target="#hobo">HOBO ?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Meetings</h1>
+<h1 class="title">Datasets</h1>
 </div>
 
 
@@ -271,13 +312,111 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This appendix can be used to take notes from meetings.</p>
-<section id="launch" class="level2">
-<h2 class="anchored" data-anchor-id="launch">26/03/10 - Launch</h2>
-<p><em>Sylvain, Léa</em></p>
-<p>Upcoming.</p>
+<p>This chapters describes all datasets per sites, projects and sensors listed and described below. Specific details on the dataset are given in the corresponding page. For the moment available datasets are:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Site, <span class="sc">~</span>Project, <span class="sc">~</span>Sensor, <span class="sc">~</span>Status, <span class="sc">~</span>Comment,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Paracou"</span>, <span class="st">"ALT"</span>, <span class="st">"TOMST"</span>, <span class="st">"To update"</span>, <span class="st">""</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Paracou"</span>, <span class="st">"ALT"</span>, <span class="st">"HOBO"</span>, <span class="st">"To do"</span>, <span class="st">""</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nouragues Petit Plateau"</span>, <span class="st">"ALT"</span>, <span class="st">"TOMST"</span>, <span class="st">"To do"</span>, <span class="st">""</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Arbocel"</span>, <span class="st">"HESS"</span>, <span class="st">"TOMST"</span>, <span class="st">"To do"</span>, <span class="st">""</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Laussat"</span>, <span class="st">"HESS"</span>, <span class="st">"TOMST"</span>, <span class="st">"To do"</span>, <span class="st">""</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Site</th>
+<th style="text-align: left;">Project</th>
+<th style="text-align: left;">Sensor</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Paracou</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">To update</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Paracou</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">HOBO</td>
+<td style="text-align: left;">To do</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nouragues Petit Plateau</td>
+<td style="text-align: left;">ALT</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">To do</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arbocel</td>
+<td style="text-align: left;">HESS</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">To do</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laussat</td>
+<td style="text-align: left;">HESS</td>
+<td style="text-align: left;">TOMST</td>
+<td style="text-align: left;">To do</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="sites" class="level2">
+<h2 class="anchored" data-anchor-id="sites">Sites</h2>
+<p>Available sites are</p>
+<ul>
+<li><strong>Arbocel</strong> - description with link.</li>
+<li><strong>Laussat</strong> - description with link.</li>
+<li><strong>NouraguesPP</strong> - for Nouragues Petit Plateau - description with link.</li>
+<li><strong>Paracou</strong> - description with link.</li>
+</ul>
+</section>
+<section id="projects" class="level2">
+<h2 class="anchored" data-anchor-id="projects">Projects</h2>
+<ul>
+<li><strong>ALT</strong> - description with link.</li>
+<li><strong>HESS</strong> - description with link.</li>
+</ul>
+</section>
+<section id="sensors" class="level2">
+<h2 class="anchored" data-anchor-id="sensors">Sensors</h2>
+<blockquote class="blockquote">
+<p>To be detailed by sensor and not brand.</p>
+</blockquote>
+<ul>
+<li><strong>TOMST</strong> - short description with link.</li>
+<li><strong>HOBO</strong> - short description with link.</li>
+</ul>
+<section id="tomst-tms4" class="level3">
+<h3 class="anchored" data-anchor-id="tomst-tms4">Tomst TMS4</h3>
+<p>Tomst TMS4 raw data include the following CSV files:</p>
+<ul>
+<li>binary files (e.g.&nbsp;<code>binary_sensorid_year_day_month_0.csv</code>) - description</li>
+<li>command files (e.g.&nbsp;<code>binary_sensorid_year_day_month_0.csv</code>) - description</li>
+<li>data files (e.g.&nbsp;<code>data_sensorid_year_day_month_0.csv</code>) - description</li>
+</ul>
+</section>
+<section id="hobo" class="level3">
+<h3 class="anchored" data-anchor-id="hobo">HOBO ?</h3>
+<p>HOBO ? raw data are excel sheet named as <code>1 2025-04-18 10_29_05 AST (Data French Guiana Standard Time).xlsx</code> to be further detailed.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -683,13 +822,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./32_summary.html" class="pagination-link" aria-label="Database summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Database summary</span>
+      <a href="./13_processing.html" class="pagination-link" aria-label="Data processing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data processing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./21_paracou_alt_tomst.html" class="pagination-link" aria-label="Paracou TOMST ALT">
+        <span class="nav-page-text">Paracou TOMST ALT</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

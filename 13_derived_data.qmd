@@ -1,9 +1,0 @@
-# Derived data {.unnumbered}
-
-```{r set}
-#| message: false
-#| warning: false
-library(tidyverse)
-```
-
-> Adding a bit of cleaning error detection and metadata should do it. Ultimate objective could be to automate Fourier's decomposition.

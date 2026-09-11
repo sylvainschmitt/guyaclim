@@ -1,0 +1,40 @@
+# Database summary {.unnumbered}
+
+```{r set}
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r prep}
+#| eval: false
+read_tsv("db/guyaclim.tsv") |> 
+  select(site, project, sensor, variable) |> 
+  unique() |> 
+  group_by(site, project, sensor) |> 
+  summarise(variables = paste0(variable, collapse = ", ")) |> 
+  write_tsv("db/vars.tsv")
+read_tsv("db/guyaclim.tsv") |> 
+  group_by(site, project, sensor, id, variable) |> 
+  summarise(n = n()) |> 
+  group_by(site, project, sensor, variable) |> 
+  summarise(min = min(n), median = median(n), max = max(n)) |> 
+  write_tsv("db/obs.tsv")
+```
+
+Available variables are:
+
+```{r vars}
+#| message: false
+#| warning: false
+read_tsv("db/vars.tsv") |> knitr::kable()
+```
+
+Number of observations are:
+
+```{r obs}
+#| message: false
+#| warning: false
+read_tsv("db/obs.tsv") |> 
+  knitr::kable(format.args = list(big.mark = ",", scientific = FALSE))
+```

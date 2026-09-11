@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Meetings – guyaclim</title>
+<title>Paracou TOMST ALT – guyaclim</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,8 +71,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99_references.html" rel="next">
-<link href="./32_summary.html" rel="prev">
+<link href="./22_paracou_alt_hobo.html" rel="next">
+<link href="./20_datasets.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_datasets.html">Datasets</a></li><li class="breadcrumb-item"><a href="./21_paracou_alt_tomst.html">Paracou TOMST ALT</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21_paracou_alt_tomst.html" class="sidebar-item-text sidebar-link">
+  <a href="./21_paracou_alt_tomst.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Paracou TOMST ALT</span></a>
   </div>
 </li>
@@ -172,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./23_nouraguespp_alt_tomst.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nouragues Petit Plateau TOMST ALT</span></a>
+ <span class="menu-text">Nouragues PP TOMST ALT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -223,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meetings</span></a>
   </div>
 </li>
@@ -245,16 +280,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#launch" id="toc-launch" class="nav-link active" data-scroll-target="#launch">26/03/10 - Launch</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#campaigns" id="toc-campaigns" class="nav-link" data-scroll-target="#campaigns">Campaigns</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#other-files" id="toc-other-files" class="nav-link" data-scroll-target="#other-files">Other files</a></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_datasets.html">Datasets</a></li><li class="breadcrumb-item"><a href="./21_paracou_alt_tomst.html">Paracou TOMST ALT</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Meetings</h1>
+<h1 class="title">Paracou TOMST ALT</h1>
 </div>
 
 
@@ -271,11 +310,222 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This appendix can be used to take notes from meetings.</p>
-<section id="launch" class="level2">
-<h2 class="anchored" data-anchor-id="launch">26/03/10 - Launch</h2>
-<p><em>Sylvain, Léa</em></p>
-<p>Upcoming.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
+<p>This is the chunk to manually prepare the dataset, this should be automated in the future.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_tomst_data.R"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_tomst_campaign.R"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/read_sensor_project.R"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_sensor_project</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"data/Paracou_ALT_TOMST/"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sensor =</span> <span class="st">"TOMST"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(data, <span class="st">"datasets/Paracou_ALT_TOMST.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="campaigns" class="level2">
+<h2 class="anchored" data-anchor-id="campaigns">Campaigns</h2>
+<p>Currently available campaigns are:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/Paracou_ALT_TOMST/campaigns.xlsx"</span>) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">campaign</th>
+<th style="text-align: right;">utc</th>
+<th style="text-align: right;">start</th>
+<th style="text-align: right;">end</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">20240920</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20230401</td>
+<td style="text-align: right;">20240920</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20250418</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20240920</td>
+<td style="text-align: right;">20250418</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20250930</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20250418</td>
+<td style="text-align: right;">20250930</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"datasets/Paracou_ALT_TOMST.tsv"</span>, <span class="at">n_max =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 11%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">sensornum</th>
+<th style="text-align: left;">field</th>
+<th style="text-align: left;">defect</th>
+<th style="text-align: left;">comment</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">t_soil</th>
+<th style="text-align: right;">t_surface</th>
+<th style="text-align: right;">t_air</th>
+<th style="text-align: right;">moisture</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 22:00:00</td>
+<td style="text-align: right;">24.5000</td>
+<td style="text-align: right;">23.6250</td>
+<td style="text-align: right;">22.7500</td>
+<td style="text-align: right;">2469</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 22:15:00</td>
+<td style="text-align: right;">24.5000</td>
+<td style="text-align: right;">23.6250</td>
+<td style="text-align: right;">22.7500</td>
+<td style="text-align: right;">2469</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 22:30:00</td>
+<td style="text-align: right;">24.5000</td>
+<td style="text-align: right;">23.5625</td>
+<td style="text-align: right;">22.7500</td>
+<td style="text-align: right;">2469</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 22:45:00</td>
+<td style="text-align: right;">24.5000</td>
+<td style="text-align: right;">23.5000</td>
+<td style="text-align: right;">22.6875</td>
+<td style="text-align: right;">2468</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 23:00:00</td>
+<td style="text-align: right;">24.5000</td>
+<td style="text-align: right;">23.5000</td>
+<td style="text-align: right;">22.6250</td>
+<td style="text-align: right;">2469</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">94223161</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2023-03-31 23:15:00</td>
+<td style="text-align: right;">24.4375</td>
+<td style="text-align: right;">23.5625</td>
+<td style="text-align: right;">22.7500</td>
+<td style="text-align: right;">2468</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"datasets/Paracou_ALT_TOMST.tsv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(date, t_air)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_datetime</span>(<span class="st">"2024-09-20 00:00:00"</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_datetime</span>(<span class="st">"2025-04-18 00:00:00"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  ), <span class="at">col =</span> <span class="st">'lightgrey'</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> id) <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">15</span>, <span class="dv">40</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="21_paracou_alt_tomst_files/figure-html/fig-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="other-files" class="level2">
+<h2 class="anchored" data-anchor-id="other-files">Other files</h2>
+<blockquote class="blockquote">
+<p>To be described.</p>
+</blockquote>
+</section>
+<section id="to-do" class="level2">
+<h2 class="anchored" data-anchor-id="to-do">To do</h2>
+<blockquote class="blockquote">
+<ul>
+<li>To automate, by hand for the moment with the three folders.</li>
+<li>This is heavy in memory so it should be automated with a workflow based on intermediary files.</li>
+</ul>
+</blockquote>
 
 
 </section>
@@ -683,13 +933,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./32_summary.html" class="pagination-link" aria-label="Database summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Database summary</span>
+      <a href="./20_datasets.html" class="pagination-link" aria-label="Datasets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Datasets</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./22_paracou_alt_hobo.html" class="pagination-link" aria-label="Paracou HOBO ALT">
+        <span class="nav-page-text">Paracou HOBO ALT</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

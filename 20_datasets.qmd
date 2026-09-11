@@ -1,0 +1,47 @@
+# Datasets {.unnumbered}
+
+This chapters describes all datasets per sites, projects and sensors listed and described below. Specific details on the dataset are given in the corresponding page. For the moment available datasets are:
+
+```{r}
+dplyr::tribble(
+  ~Site, ~Project, ~Sensor, ~Status, ~Comment,
+  "Paracou", "ALT", "TOMST", "To update", "",
+  "Paracou", "ALT", "HOBO", "To do", "",
+  "Nouragues Petit Plateau", "ALT", "TOMST", "To do", "",
+  "Arbocel", "HESS", "TOMST", "To do", "",
+  "Laussat", "HESS", "TOMST", "To do", "",
+) |> knitr::kable()
+```
+
+## Sites
+
+Available sites are
+
+- **Arbocel** - description with link.
+- **Laussat** - description with link.
+- **NouraguesPP** - for Nouragues Petit Plateau - description with link.
+- **Paracou** - description with link.
+
+## Projects
+
+- **ALT** - description with link.
+- **HESS** - description with link.
+
+## Sensors
+
+> To be detailed by sensor and not brand.
+
+- **TOMST** - short description with link.
+- **HOBO** - short description with link.
+
+### Tomst TMS4
+
+Tomst TMS4 raw data include the following CSV files:
+
+- binary files (e.g. `binary_sensorid_year_day_month_0.csv`) - description
+- command files (e.g. `binary_sensorid_year_day_month_0.csv`) - description
+- data files (e.g. `data_sensorid_year_day_month_0.csv`) - description
+
+### HOBO ?
+
+HOBO ? raw data are excel sheet named as `1 2025-04-18 10_29_05 AST (Data French Guiana Standard Time).xlsx` to be further detailed.

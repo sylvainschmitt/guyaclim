@@ -1,0 +1,3 @@
+# Raw data {.unnumbered}
+
+All raw data directly taken from the field are gathered in the `data/` folder. The following pages describes raw data structure, metadata and associated content, and how we are consolidating first by site x project x sensor and then in a single global database.

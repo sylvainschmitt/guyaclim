@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Meetings – guyaclim</title>
+<title>Metadata – guyaclim</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,8 +71,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99_references.html" rel="next">
-<link href="./32_summary.html" rel="prev">
+<link href="./13_processing.html" rel="next">
+<link href="./11_structure.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_raw_data.html">Raw data</a></li><li class="breadcrumb-item"><a href="./12_metadata.html">Metadata</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12_metadata.html" class="sidebar-item-text sidebar-link">
+  <a href="./12_metadata.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Metadata</span></a>
   </div>
 </li>
@@ -223,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meetings</span></a>
   </div>
 </li>
@@ -245,16 +280,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#launch" id="toc-launch" class="nav-link active" data-scroll-target="#launch">26/03/10 - Launch</a></li>
+  <li><a href="#sensors-metadata" id="toc-sensors-metadata" class="nav-link active" data-scroll-target="#sensors-metadata">Sensors metadata</a></li>
+  <li><a href="#all-campaigns-metadata" id="toc-all-campaigns-metadata" class="nav-link" data-scroll-target="#all-campaigns-metadata">All campaigns metadata</a></li>
+  <li><a href="#campaign-metadata" id="toc-campaign-metadata" class="nav-link" data-scroll-target="#campaign-metadata">Campaign metadata</a></li>
+  <li><a href="#other-metadata" id="toc-other-metadata" class="nav-link" data-scroll-target="#other-metadata">Other metadata</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_raw_data.html">Raw data</a></li><li class="breadcrumb-item"><a href="./12_metadata.html">Metadata</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Meetings</h1>
+<h1 class="title">Metadata</h1>
 </div>
 
 
@@ -271,11 +309,272 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This appendix can be used to take notes from meetings.</p>
-<section id="launch" class="level2">
-<h2 class="anchored" data-anchor-id="launch">26/03/10 - Launch</h2>
-<p><em>Sylvain, Léa</em></p>
-<p>Upcoming.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="sensors-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="sensors-metadata">Sensors metadata</h2>
+<p>Sensors metadata are project specific but they should include sensor serial number (e.g.&nbsp;TomstSensorNum here) and corresponding study ID (e.g.&nbsp;TomstID) for associated information. An ID can have in this case several sensors associated as the change of sensors here. The metadata may contain associated ecological data (e.g.&nbsp;light, habitat, edge) and geolocation data (e.g.&nbsp;distance to 3 nearest neighbours here). They should be described in a metadata sheet, in the README, or in the corresponding html file. Metadata should also include the project or acquisition beginning and end, and eventually calibration dates.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/Paracou_ALT_TOMST/metadata.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: right;">SubPlot</th>
+<th style="text-align: right;">TomstID</th>
+<th style="text-align: right;">TomstSensorNum</th>
+<th style="text-align: left;">Transect</th>
+<th style="text-align: left;">LightHabitat</th>
+<th style="text-align: left;">TopoHabitat</th>
+<th style="text-align: left;">LayonEdge</th>
+<th style="text-align: right;">TreeNum1</th>
+<th style="text-align: right;">TreeNum2</th>
+<th style="text-align: right;">TreeNum3</th>
+<th style="text-align: right;">DTree1</th>
+<th style="text-align: right;">DTree2</th>
+<th style="text-align: right;">DTree3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">94244926</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">233689</td>
+<td style="text-align: right;">232805</td>
+<td style="text-align: right;">233735</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">310</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">94244927</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">232928</td>
+<td style="text-align: right;">233639</td>
+<td style="text-align: right;">233699</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">235</td>
+<td style="text-align: right;">142</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">94244928</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">232816</td>
+<td style="text-align: right;">232847</td>
+<td style="text-align: right;">232817</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">210</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">94244929</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Gap border</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">232827</td>
+<td style="text-align: right;">231955</td>
+<td style="text-align: right;">232805</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">270</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">94244930</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Sunfleck</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">231911</td>
+<td style="text-align: right;">231797</td>
+<td style="text-align: right;">231915</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">210</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">94244935</td>
+<td style="text-align: left;">Gap</td>
+<td style="text-align: left;">Sunfleck</td>
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">231911</td>
+<td style="text-align: right;">231797</td>
+<td style="text-align: right;">231915</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">210</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="all-campaigns-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="all-campaigns-metadata">All campaigns metadata</h2>
+<p>The <code>campaigns.xlsx</code> metadata table detail all data campaigns with its name (mainly the date) time adjustment (utc), starting and ending date, and eventually a comment (such as calibration) to help reading automatically all campaigns.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/Paracou_ALT_TOMST/campaigns.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">campaign</th>
+<th style="text-align: right;">utc</th>
+<th style="text-align: right;">start</th>
+<th style="text-align: right;">end</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">20240920</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20230401</td>
+<td style="text-align: right;">20240920</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20250418</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20240920</td>
+<td style="text-align: right;">20250418</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20250930</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">20250418</td>
+<td style="text-align: right;">20250930</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="campaign-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="campaign-metadata">Campaign metadata</h2>
+<blockquote class="blockquote">
+<p>To be discussed with Léa and consolidated.</p>
+</blockquote>
+<p>Campaigns metadata would be acquired during sampling campaigns on the collection on data and status of the sensor informing us by comparison with the last campaign on which should data should be kept and tagging possible data with defects. For the moment it only include sensor ID, the information of collection, the defect to harmonized and a free comment section. This campaigns metadata could be accompanied by a field sheet model and protocol or with a tablet acquisition tool.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/Paracou_ALT_TOMST/20240920.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">ID</th>
+<th style="text-align: left;">field</th>
+<th style="text-align: left;">defect</th>
+<th style="text-align: left;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="other-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="other-metadata">Other metadata</h2>
+<p>All other relevant information linked to campaigns, sensors, projects or sites. They will be described in the page corresponding to it.</p>
 
 
 </section>
@@ -683,13 +982,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./32_summary.html" class="pagination-link" aria-label="Database summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Database summary</span>
+      <a href="./11_structure.html" class="pagination-link" aria-label="Structure">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Structure</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13_processing.html" class="pagination-link" aria-label="Data processing">
+        <span class="nav-page-text">Data processing</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

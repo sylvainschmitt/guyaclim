@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Meetings – guyaclim</title>
+<title>Data processing – guyaclim</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,8 +71,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99_references.html" rel="next">
-<link href="./32_summary.html" rel="prev">
+<link href="./20_datasets.html" rel="next">
+<link href="./12_metadata.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_raw_data.html">Raw data</a></li><li class="breadcrumb-item"><a href="./13_processing.html">Data processing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13_processing.html" class="sidebar-item-text sidebar-link">
+  <a href="./13_processing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data processing</span></a>
   </div>
 </li>
@@ -223,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./97_meeting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meetings</span></a>
   </div>
 </li>
@@ -245,16 +280,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#launch" id="toc-launch" class="nav-link active" data-scroll-target="#launch">26/03/10 - Launch</a></li>
+  <li><a href="#sensor-data-reading" id="toc-sensor-data-reading" class="nav-link active" data-scroll-target="#sensor-data-reading">Sensor data reading</a></li>
+  <li><a href="#sensor-campaign-reading" id="toc-sensor-campaign-reading" class="nav-link" data-scroll-target="#sensor-campaign-reading">Sensor campaign reading</a></li>
+  <li><a href="#sensor-project-reading" id="toc-sensor-project-reading" class="nav-link" data-scroll-target="#sensor-project-reading">Sensor project reading</a></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./97_meeting.html">Appendices</a></li><li class="breadcrumb-item"><a href="./97_meeting.html">Meetings</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_raw_data.html">Raw data</a></li><li class="breadcrumb-item"><a href="./13_processing.html">Data processing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Meetings</h1>
+<h1 class="title">Data processing</h1>
 </div>
 
 
@@ -271,11 +310,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This appendix can be used to take notes from meetings.</p>
-<section id="launch" class="level2">
-<h2 class="anchored" data-anchor-id="launch">26/03/10 - Launch</h2>
-<p><em>Sylvain, Léa</em></p>
-<p>Upcoming.</p>
+<p>Data processing is for the moment pretty basic based on R scripts in <code>scripts</code>:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">"scripts/"</span>, <span class="at">recurse =</span> <span class="dv">0</span>, <span class="at">glob =</span> <span class="st">"*.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>scripts/
+├── read_sensor_project.R
+├── read_tomst_campaign.R
+└── read_tomst_data.R</code></pre>
+</div>
+</div>
+<section id="sensor-data-reading" class="level2">
+<h2 class="anchored" data-anchor-id="sensor-data-reading">Sensor data reading</h2>
+<p>First each sensor (by model and not brand, not the case yet) will have a reading function to read the specific data file (e.g.&nbsp;<code>data.csv</code> for TOMST and <code>data.xlsx</code> for HOBO). This is the <code>read_{sensor}_data.R</code> function.</p>
+</section>
+<section id="sensor-campaign-reading" class="level2">
+<h2 class="anchored" data-anchor-id="sensor-campaign-reading">Sensor campaign reading</h2>
+<p>Then a function ease the reading for a whole campaign (sampling date) called <code>read_{sensor}_campaign.R</code> . This is sensor specific as metadata should be sensor specific (and maybe project specific?).</p>
+</section>
+<section id="sensor-project-reading" class="level2">
+<h2 class="anchored" data-anchor-id="sensor-project-reading">Sensor project reading</h2>
+<p>Finally, a function ease the assembly at the whole sensor x project level and is generic with a switch depending on the sensor. This is <code>read_{sensor}_project.R</code> .</p>
+</section>
+<section id="to-do" class="level2">
+<h2 class="anchored" data-anchor-id="to-do">To do</h2>
+<blockquote class="blockquote">
+<ul>
+<li>Column names need harmonization.</li>
+<li>We need data check functions.</li>
+<li>An automatic reports could be produced for errors (discussed at which level). I think the best would be at the sensor-project level with maybe a snakemake and singularity worklow or a simple R workflow to automate it with outputs in a separate place and thus sensor project databases and a single common databases (maybe sqlight for big ones).</li>
+<li>Reading functions will depend on the sensors and will need to be made generic on the way they open and handle data.</li>
+<li>We need to had soil data or parameters for soil moisture.</li>
+<li>Date filtering should be used the earliest to save memory.</li>
+</ul>
+</blockquote>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 
 
 </section>
@@ -683,13 +757,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./32_summary.html" class="pagination-link" aria-label="Database summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Database summary</span>
+      <a href="./12_metadata.html" class="pagination-link" aria-label="Metadata">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Metadata</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./20_datasets.html" class="pagination-link" aria-label="Datasets">
+        <span class="nav-page-text">Datasets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

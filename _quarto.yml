@@ -7,10 +7,22 @@ book:
   date: last-modified
   chapters:
     - index.qmd
-    - 10_structure.qmd
-    - 11_metadata.qmd
-    - 12_raw_data.qmd
-    - 13_derived_data.qmd
+    - part: 10_raw_data.qmd
+      chapters: 
+      - 11_structure.qmd
+      - 12_metadata.qmd
+      - 13_processing.qmd
+    - part:  20_datasets.qmd
+      chapters: 
+      - 21_paracou_alt_tomst.qmd
+      - 22_paracou_alt_hobo.qmd
+      - 23_nouraguespp_alt_tomst.qmd
+      - 24_arbocel_hess_tomst.qmd
+      - 25_laussat_hess_tomst.qmd
+    - part: 30_database.qmd
+      chapters: 
+      - 31_processing.qmd
+      - 32_summary.qmd
   appendices:
     - 97_meeting.qmd
     - 99_references.qmd

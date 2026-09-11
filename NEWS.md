@@ -1,3 +1,4 @@
+- guyaclim 0.1.0.9004: restructuration to welcome new data, going foward
 - guyaclim 0.1.0.9003: try to restart
 - guyaclim 0.1.0.9002: adaptive decimal
 - guyaclim 0.1.0.9001: init

@@ -1,0 +1,33 @@
+# Datasets processing {.unnumbered}
+
+Datasets processing is for the moment pretty basic based on the following chunk:
+
+```{r datasets_processing}
+#| eval: false
+paracou_alt_tomst <- read_tsv("datasets/Paracou_ALT_TOMST.tsv") |> 
+  mutate(site = "Paracou", project = "ALT", sensor = "TOMST") |> 
+  select(site, project, sensor, id, sensornum, date,
+         t_soil, t_surface, t_air, moisture) |> 
+  pivot_longer(cols = t_soil:moisture, names_to = "variable")
+bind_rows(paracou_alt_tomst) |> 
+  write_tsv("db/guyaclim.tsv")
+```
+
+It combines all datasets across sites, sensor and projects in a single database (csv or sqlite or both). But to do so some metadata will be lost on the way. Current columns are:
+
+- site - site name
+- project - project name
+- sensor - sensor name
+- id - sensor id in the project
+- sensornum - manufacturer sensor id
+- date - sampling date and time
+- variable - variable measured:
+  - t_soil: soil temperature (-8 cm for TOMST)
+  - t_air: air temperature (15 cm for TOMST)
+  - t_surface: surface temperature (0 cm for TOMST)
+  - moisture: electric moisture to be transformed into soil water content with soil texture (table to be added)
+- value - value of the measured variable
+  - t_soil: soil temperature in degree Celsisus
+  - t_air: air temperature in degree Celsisus
+  - t_surface: surface temperature in degree Celsisus
+  - moisture: electric moisture

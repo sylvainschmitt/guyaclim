@@ -1,0 +1,30 @@
+# Data processing {.unnumbered}
+
+Data processing is for the moment pretty basic based on R scripts in `scripts`:
+
+```{r}
+fs::dir_tree("scripts/", recurse = 0, glob = "*.R")
+```
+
+## Sensor data reading
+
+First each sensor (by model and not brand, not the case yet) will have a reading function to read the specific data file (e.g. `data.csv` for TOMST and `data.xlsx` for HOBO). This is the `read_{sensor}_data.R` function.
+
+## Sensor campaign reading
+
+Then a function ease the reading for a whole campaign (sampling date) called `read_{sensor}_campaign.R` . This is sensor specific as metadata should be sensor specific (and maybe project specific?).
+
+## Sensor project reading
+
+Finally, a function ease the assembly at the whole sensor x project level and is generic with a switch depending on the sensor. This is `read_{sensor}_project.R` .
+
+## To do
+
+> - Column names need harmonization.
+> - We need data check functions.
+> - An automatic reports could be produced for errors (discussed at which level). I think the best would be at the sensor-project level with maybe a snakemake and singularity worklow or a simple R workflow to automate it with outputs in a separate place and thus sensor project databases and a single common databases (maybe sqlight for big ones).
+> - Reading functions will depend on the sensors and will need to be made generic on the way they open and handle data.
+> - We need to had soil data or parameters for soil moisture.
+> - Date filtering should be used the earliest to save memory.
+
+## 

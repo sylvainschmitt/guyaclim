@@ -1,26 +1,5 @@
----
-title: "Scripts"
-author: Sylvain Schmitt -
-date: today
-date-format: medium
-format: 
-  gfm:
-    toc: true
-    toc-depth: 2
----
+# Scripts
 
-All scripts used to consolidate the database. *To describe.*
+*Sylvain Schmitt*
 
-
-``` r
-fs::dir_tree(recurse = 2)
-```
-
-```
-.
-├── README.md
-├── README.qmd
-├── read_sensor_project.R
-├── read_tomst_campaign.R
-└── read_tomst_data.R
-```
+All scripts used to consolidate the database. The description is given at https://github.com/sylvainschmitt/guyaclim/13_processing.html

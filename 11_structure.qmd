@@ -1,0 +1,19 @@
+# Structure {.unnumbered}
+
+The raw database is structured with a main `data/` folder in which we find a combination of each site (e.g. `Paracou/`) each project (e.g. `ALT/`) and each sensors (e.g `TOMST`) in each folder (e.g. `Paracou_TOMST_ALT/`). All levels are documented through `README`s. Sites, project, and sensors are separately described below.
+
+```{r}
+fs::dir_tree("data", recurse = 0, type = "directory")
+```
+
+In each site-project-sensor folders we find a folder by data collection campaign with its date (e.g. `20240920/`) and associated sensors metadata (`metadata.xlsx/`) and campaigns metadata (e.g. `20240920.xlsx`). Available campaigns are described in `campaigns.xlsx/` . Other information specific to a folder can also be included and will be described in corresponding page.
+
+```{r}
+fs::dir_tree("data/Paracou_ALT_TOMST/", recurse = 0)
+```
+
+And in each campaign folder we find all the raw files. They will be described for each sensor type below.
+
+```{r}
+fs::dir_tree("data/Paracou_ALT_TOMST/20240920/", recurse = 0)
+```
